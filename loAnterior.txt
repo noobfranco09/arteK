@@ -1,0 +1,366 @@
+index.php
+<?php
+// Incluir archivo de configuración
+require_once 'config/config.php';
+// Incluir funciones de productos
+require_once 'functions/product-functions.php';
+// Incluir datos de productos
+require_once 'data/products.php';
+
+// Incluir el encabezado
+include 'includes/header.php';
+// Incluir la navegación
+include 'includes/navigation.php';
+?>
+
+<!-- Contenido Principal -->
+<main class="container">
+    <section id="home">
+        <h2>Bienvenidos a <?php echo $siteName; ?></h2>
+        <p>Descubre nuestra amplia variedad de productos de alta calidad.</p>
+    </section>
+    
+    <?php include 'pages/products.php'; ?>
+</main>
+
+<!-- Incluir el modal de productos -->
+<div class="product-modal" id="productModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalProductName"></h2>
+            <span class="close-modal">&times;</span>
+        </div>
+        <img id="modalProductImage" class="modal-image" src="" alt="">
+        <div id="modalProductPrice" class="product-price"></div>
+        <div id="modalProductDescription"></div>
+    </div>
+</div>
+
+<!-- Incluir botón de WhatsApp -->
+<?php include 'includes/whatsapp-button.php'; ?>
+
+<!-- Incluir el pie de página -->
+<?php include 'includes/footer.php'; ?>
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+productos.php
+<section id="products">
+    <h2>Nuestros Productos</h2>
+    
+    <!-- Pestañas de categorías -->
+    <div class="category-tabs">
+        <div class="category-tab active" data-category="all">Todos</div>
+        <?php foreach ($categories as $category): ?>
+            <div class="category-tab" data-category="<?php echo htmlspecialchars($category); ?>">
+                <?php echo htmlspecialchars($category); ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    
+    <!-- Productos -->
+    <div class="products-grid">
+        <?php foreach ($products as $product): ?>
+        <div class="product-card" data-category="<?php echo htmlspecialchars($product['category']); ?>" data-id="<?php echo $product['id']; ?>">
+            <img class="product-image" src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+            <div class="product-info">
+                <div class="product-name"><?php echo htmlspecialchars($product['name']); ?></div>
+                <div class="product-price"><?php echo htmlspecialchars($product['price']); ?></div>
+                <div class="product-description"><?php echo htmlspecialchars($product['short_description']); ?></div>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+<!-- pages/about.php -->
+<?php
+require_once '../config/config.php';
+include '../includes/header.php';
+include '../includes/navigation.php';
+?>
+
+<main class="container">
+    <section id="about">
+        <h2>Sobre ARTE-K</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="<?php echo $imagesUrl; ?>/about-artisan.jpg" alt="Artesano de ARTE-K">
+            </div>
+            <div class="about-text">
+                <h3>Nuestra Historia</h3>
+                <p>ARTE-K nació de la pasión por preservar y celebrar el arte de la cerámica. Fundada por Damian Sanchez, nuestra empresa se dedica a la importación y restauración de piezas de cerámica, manteniendo vivas técnicas tradicionales mientras incorporamos innovaciones modernas.</p>
+                
+                <h3>Nuestra Misión</h3>
+                <p>Nuestra misión es ofrecer productos de cerámica de la más alta calidad, respetando las tradiciones artesanales y apoyando a artesanos locales. Además, nos dedicamos a restaurar piezas valiosas, devolviéndoles su belleza original y preservando su valor histórico y sentimental.</p>
+                
+                <h3>Nuestro Compromiso</h3>
+                <p>En ARTE-K, nos comprometemos con la excelencia en cada pieza que importamos o restauramos. Trabajamos con materiales de primera calidad y técnicas probadas que garantizan resultados excepcionales para nuestros clientes.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<?php include '../includes/whatsapp-button.php'; ?>
+<?php include '../includes/footer.php'; ?>
+
+<!-- pages/contact.php -->
+<?php
+require_once '../config/config.php';
+include '../includes/header.php';
+include '../includes/navigation.php';
+?>
+
+<main class="container">
+    <section id="contact">
+        <h2>Contacto</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p><strong>WhatsApp:</strong> <?php echo formatPhoneNumber($whatsappNumber); ?></p>
+                <p><strong>Email:</strong> <?php echo $emailContact; ?></p>
+                <p><strong>Horario de Atención:</strong> Lunes a Viernes de 9:00 a 18:00</p>
+                
+                <div class="contact-social">
+                    <h3>Síguenos en Redes Sociales</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" title="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" title="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-message">
+                <h3>Envíanos un Mensaje</h3>
+                <p>Puedes contactarnos directamente por WhatsApp haciendo clic en el botón flotante que aparece en la esquina inferior derecha de la pantalla.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<?php include '../includes/whatsapp-button.php'; ?>
+<?php include '../includes/footer.php'; ?>
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Productos.php
+<?php
+// Datos de productos (en producción, esto podría venir de una base de datos)
+$products = [
+    [
+        "id" => 1,
+        "name" => "Vasija Decorativa",
+        "category" => "Cerámica",
+        "price" => "$599.99",
+        "short_description" => "Vasija decorativa de cerámica con diseños tradicionales",
+        "full_description" => "Hermosa vasija decorativa elaborada con técnicas tradicionales de cerámica. Cada pieza es única y presenta patrones artesanales que reflejan la cultura local. Ideal para decoración de interiores y espacios que buscan un toque de autenticidad y calidez.",
+        "image" => $productsImagesUrl . "/product1.jpg",
+        "image_large" => $productsImagesUrl . "/product1_large.jpg"
+    ],
+    [
+        "id" => 2,
+        "name" => "Plato Decorativo",
+        "category" => "Cerámica",
+        "price" => "$349.99",
+        "short_description" => "Plato decorativo de cerámica pintado a mano",
+        "full_description" => "Exquisito plato decorativo elaborado en cerámica de alta calidad y pintado a mano por artesanos especializados. Cada pieza presenta patrones únicos inspirados en motivos tradicionales. Perfecto para exhibir en estanterías, vitrinas o como centro de mesa.",
+        "image" => $productsImagesUrl . "/product2.jpg",
+        "image_large" => $productsImagesUrl . "/product2_large.jpg"
+    ],
+    [
+        "id" => 3,
+        "name" => "Kit de Restauración Básico",
+        "category" => "Restauración",
+        "price" => "$799.99",
+        "short_description" => "Kit básico para restauración de piezas de cerámica",
+        "full_description" => "Kit completo con todas las herramientas necesarias para realizar restauraciones básicas en piezas de cerámica. Incluye adhesivos especializados, pinceles de precisión, lijas de distintos granos, pigmentos y manual de instrucciones detallado. Ideal para principiantes en el arte de la restauración.",
+        "image" => $productsImagesUrl . "/product3.jpg",
+        "image_large" => $productsImagesUrl . "/product3_large.jpg"
+    ],
+    // Aquí se agregarían los demás productos hasta completar los 65
+];
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+Header.php
+<?php
+// Asegurarse de que el archivo de configuración esté incluido
+if (!isset($siteName)) {
+    require_once '../config/config.php';
+}
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?php echo $siteDescription; ?>">
+    <meta name="author" content="<?php echo $siteAuthor; ?>">
+    <title><?php echo $siteName; ?> - <?php echo $siteDescription; ?></title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="<?php echo $imagesUrl; ?>/favicon.ico" type="image/x-icon">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="<?php echo $assetsUrl; ?>/css/style.css">
+    <link rel="stylesheet" href="<?php echo $assetsUrl; ?>/css/product-card.css">
+    <link rel="stylesheet" href="<?php echo $assetsUrl; ?>/css/modal.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="<?php echo $imagesUrl; ?>/logo.png" alt="<?php echo $siteName; ?>" class="logo">
+            <h1><?php echo $siteName; ?></h1>
+            <p class="tagline"><?php echo $siteDescription; ?></p>
+        </div>
+    </header>
+
+<!-- includes/navigation.php -->
+<nav>
+    <div class="container">
+        <ul>
+            <li><a href="index.php#home">Inicio</a></li>
+            <li><a href="index.php#products">Productos</a></li>
+            <li><a href="pages/about.php">Nosotros</a></li>
+            <li><a href="pages/contact.php">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- includes/footer.php -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="<?php echo $imagesUrl; ?>/logo.png" alt="<?php echo $siteName; ?>" class="logo-small">
+                    <p><?php echo $siteName; ?> - <?php echo $siteDescription; ?></p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p>WhatsApp: <?php echo formatPhoneNumber($whatsappNumber); ?></p>
+                    <p>Email: <?php echo $emailContact; ?></p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <?php echo date('Y'); ?> <?php echo $siteName; ?>. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="<?php echo $assetsUrl; ?>/js/main.js"></script>
+    <script src="<?php echo $assetsUrl; ?>/js/category-filter.js"></script>
+    <script src="<?php echo $assetsUrl; ?>/js/product-modal.js"></script>
+</body>
+</html>
+
+<!-- includes/whatsapp-button.php -->
+<a href="https://wa.me/<?php echo $whatsappNumber; ?>" class="whatsapp-button" target="_blank">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM15.5 14.5C15.23 14.77 14.95 15 14.6 15C14.27 15 13.9 14.78 13.6 14.5C13.3 14.22 12.95 14 12.6 14C12.25 14 11.9 14.22 11.6 14.5C11.3 14.78 10.95 15 10.6 15C10.25 15 9.9 14.78 9.6 14.5C9.3 14.22 8.95 14 8.6 14C8.26 14 7.9 14.23 7.6 14.5C7.3 14.77 7 15 6.6 15C6.2 15 5.9 14.77 5.6 14.5L5.5 14.4C5.32 14.22 5.18 14 5.1 13.74C4.95 13.22 4.97 12.66 5.13 12.12C5.29 11.58 5.59 11.08 6 10.7C7.1 9.7 8.55 9.2 10.1 9.08C11.65 8.96 13.2 9.24 14.55 9.9C15.9 10.56 16.95 11.56 17.63 12.78C17.83 13.15 17.96 13.56 18 14L18 14.09C18 14.09 17.97 14.27 17.94 14.35C17.86 14.62 17.7 14.85 17.5 15C17.2 15.23 16.86 15.23 16.55 15C16.24 14.77 15.77 14.77 15.5 14.5Z"></path>
+    </svg>
+</a>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+funciones/productoFuncion.php
+<!-- functions/product-functions.php -->
+<?php
+/**
+ * Obtiene todos los productos
+ * 
+ * @return array Array de productos
+ */
+function getAllProducts() {
+    global $products;
+    return $products;
+}
+
+/**
+ * Obtiene productos por categoría
+ * 
+ * @param string $category Nombre de la categoría
+ * @return array Array de productos filtrados
+ */
+function getProductsByCategory($category) {
+    global $products;
+    return array_filter($products, function($product) use ($category) {
+        return $product['category'] === $category;
+    });
+}
+
+/**
+ * Obtiene un producto por su ID
+ * 
+ * @param int $id ID del producto
+ * @return array|null Datos del producto o null si no existe
+ */
+function getProductById($id) {
+    global $products;
+    foreach ($products as $product) {
+        if ($product['id'] == $id) {
+            return $product;
+        }
+    }
+    return null;
+}
+
+/**
+ * Formatea un número de teléfono para mostrar
+ * 
+ * @param string $phone Número de teléfono
+ * @return string Número formateado
+ */
+function formatPhoneNumber($phone) {
+    // Eliminar caracteres no numéricos
+    $phone = preg_replace('/[^0-9]/', '', $phone);
+    
+    // Formato para México (ajustar según país)
+    if (strlen($phone) == 10) {
+        return '(' . substr($phone, 0, 3) . ') ' . substr($phone, 3, 3) . '-' . substr($phone, 6);
+    } elseif (strlen($phone) > 10) {
+        // Con código de país
+        return '+' . substr($phone, 0, strlen($phone) - 10) . ' (' . 
+               substr($phone, -10, 3) . ') ' . 
+               substr($phone, -7, 3) . '-' . 
+               substr($phone, -4);
+    }
+    
+    // Si no coincide con los formatos esperados, devolver tal cual
+    return $phone;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+config.php
+<?php
+// Configuración del sitio
+$siteName = "ARTE-K";
+$siteDescription = "DE LO ROTO A LO HERMOSO PINTAMOS TU HISTORIA";
+$siteAuthor = "Damian Sanchez";
+
+// Configuración de contacto
+$whatsappNumber = "+"; // Reemplazar con el número real
+
+// Configuración de base de datos (si se usa en el futuro)
+$dbHost = "localhost";
+$dbUser = "usuario";
+$dbPass = "contraseña";
+$dbName = "arte_k_db";
+
+// Categorías de productos
+$categories = ["Cerámica", "Restauración", "Decoración"];
+
+// Configuración de rutas y URLs
+$baseUrl = "http://localhost/arte-k"; // Cambiar en producción
+$assetsUrl = $baseUrl . "/assets";
+$imagesUrl = $assetsUrl . "/img";
+$productsImagesUrl = $imagesUrl . "/products";
+?>
