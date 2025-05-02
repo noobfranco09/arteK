@@ -1,4 +1,4 @@
-/* assets/css/product-card.css */
+
 /* Categorías */
 .category-tabs {
     display: flex;
@@ -118,3 +118,11 @@
         padding: 10px;
     }
 }
+/*.product-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta al pasar el mouse 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}*/
