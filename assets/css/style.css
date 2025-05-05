@@ -87,7 +87,7 @@ header .container {
 }
 
 .logo {
-    max-width: 400px;
+    max-width: 370px;
     height: auto;
     margin-bottom: 10px;
 }
@@ -118,6 +118,8 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
@@ -125,17 +127,17 @@ nav li {
 }
 
 nav a {
-    color: white;
     text-decoration: none;
+    color: white; /* Color del texto por defecto */
     font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--accent2-color); /* Cambia a amarillo */
+    color: #333; /* Cambia el texto a un color oscuro para contraste */
 }
 
 /* Footer */
@@ -282,7 +284,24 @@ footer {
     border-radius: 5px;
     font-size: 1rem;
 }
+.footer-social .social-icons a img {
+    width: 130px; /* Tamaño deseado del ícono */
+    height: 130px; /* Tamaño deseado del ícono */
+    display: block;
+    object-fit: contain; /* Mantiene las proporciones de la imagen */
+}
 
+.footer-social .social-icons a img {
+    width: 100%;
+    height: 100%;
+    height: auto;
+    display: block;
+}
+
+.footer-social .social-icons a:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+    opacity: 0.8; /* Reduce la opacidad para un efecto visual */
+}
 .btn {
     background-color: #FF9D00;
     color: white;
@@ -302,4 +321,212 @@ footer {
     color: red;
     font-size: 0.9rem;
     margin-bottom: 15px;
+}
+/* contacto */
+/* Página de contacto */
+.contact-page {
+    background: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+/* Header con imagen de fondo */
+.contact-page header {
+    background: url('../img/fondo.jpeg') center/cover no-repeat;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-page header .logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+/* Navegación global */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white; /* Color del texto por defecto */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--accent2-color); /* Cambia a amarillo */
+    color: #333; /* Cambia el texto a un color oscuro para contraste */
+}
+
+/* Sección de contacto */
+.contact-page #contact h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.contact-page .contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contact-page .contact-info, .contact-page .contact-message {
+    flex: 1 1 calc(50% - 20px);
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page .contact-info h3, .contact-page .contact-message h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.contact-page .contact-info p {
+    font-size: 16px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-page .contact-info img {
+    margin-right: 10px;
+}
+
+.contact-page .contact-social {
+    margin-top: 20px;
+}
+
+.contact-page .contact-social h3 {
+    margin-bottom: 10px;
+}
+
+.contact-page .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-page .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-page .social-icons a:hover {
+    background-color: var(--accent1-color);
+}
+
+/* Botón de WhatsApp */
+.contact-page .whatsapp-button {
+    display: inline-block;
+    background-color: var(--accent1-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-page .whatsapp-button:hover {
+    background-color: var(--accent2-color);
+}
+
+/* Footer */
+.contact-page footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--secondary-color);
+    color: #fff;
+    margin-top: 20px;
+}
+.contact-social {
+    text-align: center; /* Centra el contenido dentro de la sección */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    align-items: center; /* Centra los íconos verticalmente */
+    gap: 10px; /* Espaciado entre íconos si hay más de uno */
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color); /* Fondo del ícono */
+    color: #fff;
+    border-radius: 50%; /* Hace el ícono circular */
+    text-align: center;
+    line-height: 40px; /* Centra el contenido dentro del círculo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #007BFF; 
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; 
 }

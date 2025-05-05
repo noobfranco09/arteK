@@ -1,13 +1,16 @@
+<?php
+// Incluye el archivo que contiene los datos de productos y categorías
+require_once __DIR__ . '/../productos.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Productos</title>
+    <link rel="stylesheet" href="../assets/css/product-card.css">
 </head>
 <body>
-    
-
 <section id="products">
     <h2>Nuestros Productos</h2>
     
@@ -35,5 +38,32 @@
         <?php endforeach; ?>
     </div>
 </section>
+
+<script>
+    // Filtrado de productos por categoría
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.category-tab');
+        const products = document.querySelectorAll('.product-card');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.getAttribute('data-category');
+
+                // Cambiar la clase activa
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Mostrar/ocultar productos
+                products.forEach(product => {
+                    if (category === 'all' || product.getAttribute('data-category') === category) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
 </body>
 </html>

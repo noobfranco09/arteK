@@ -27,19 +27,16 @@ require_once __DIR__ . '/../productos.php'; // Incluye las variables $categories
     <nav>
         <div class="container">
             <ul>
-                <li><a href="index.php#home">Inicio</a></li>
-                <li><a href="index.php#products">Productos</a></li>
-                <li><a href="pages/about.php">Nosotros</a></li>
-                <li><a href="pages/contact.php">Contacto</a></li>
+                <li><a href="/arteK/views/index.php">Inicio</a></li>
+                <li><a href="/arteK/views/productos.php">Productos</a></li>
+                <li><a href="/arteK/views/aboutUs.php">Nosotros</a></li>
+                <li><a href="/arteK/views/contacto.php">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
-        <section id="home">
-            
-            <p class="highlight-text">Transforma tu espacio con nuestras piezas únicas y artesanales, diseñadas para contar tu historia.</p>
-        </section>
+        
         
         <section id="products">
             <h2 class="products-title">Nuestros Productos</h2>
@@ -84,10 +81,8 @@ require_once __DIR__ . '/../productos.php'; // Incluye las variables $categories
             <div class="footer-social">
                 <h3>Síguenos</h3>
                 <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    
+                <a href="#" class="social-icon">
+            <img src="<?php echo htmlspecialchars($imagesUrl); ?>/social.png" alt="Instagram" class="footer-icon">        </a>
                 </div>
             </div>
         </div>
