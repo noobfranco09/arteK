@@ -17,7 +17,7 @@ $mysql->desconectar();
     <meta charset="UTF-8">
     <title>Editar Productos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../estilos.css" rel="stylesheet">
+    <link href="../assets/css/estilos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +25,7 @@ $mysql->desconectar();
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Arte K - Dashboard</a>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="btn btn-success" href="./logout.php">Cerrar sesión</a>
+                <a class="btn btn-success" href="../controllers/logout.php">Cerrar sesión</a>
             </div>
         </div>
     </header>
