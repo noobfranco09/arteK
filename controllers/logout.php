@@ -1,6 +1,11 @@
 <?php
 session_start();
-session_destroy(); 
-header('Location: ../views/inicioSesion.php'); // Redirige al inicio de sesión
+
+// Eliminar todos los datos de la sesión
+session_unset();
+session_destroy();
+
+// Redirigir al login
+header("Location: ../views/login.php?logout=1");
 exit;
 ?>
