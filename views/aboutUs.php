@@ -9,9 +9,7 @@ require_once __DIR__ . '/../controllers/config.php';
     <meta name="description" content="<?php echo htmlspecialchars($siteDescription); ?>">
     <meta name="author" content="<?php echo htmlspecialchars($siteAuthor); ?>">
     <title><?php echo htmlspecialchars($siteName); ?> - <?php echo htmlspecialchars($siteDescription); ?></title>
-    <link rel="stylesheet" href="<?php echo htmlspecialchars($assetsUrl); ?>/css/style.css">
-    <link rel="stylesheet" href="<?php echo htmlspecialchars($assetsUrl); ?>/css/product-card.css">
-    <link rel="stylesheet" href="<?php echo htmlspecialchars($assetsUrl); ?>/css/modal.css">
+    <link rel="stylesheet" href="<?php echo htmlspecialchars($assetsUrl); ?>/css/styleAboutUs.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -33,11 +31,9 @@ require_once __DIR__ . '/../controllers/config.php';
     </nav>   
     <main class="container">
         <section id="about">
-            <h2>Sobre ARTE-K</h2>
+            <h1>Sobre ARTE-K</h1>
             <div class="about-content">
                 <div class="about-text">
-                    <h1>Nuestra Historia</h1>
-                    <p>ARTE-K nació de la pasión por preservar y celebrar el arte de la cerámica. Fundada por Damian Sanchez, nuestra empresa se dedica a la importación y restauración de piezas de cerámica, manteniendo vivas técnicas tradicionales mientras incorporamos innovaciones modernas.</p>
                     
                     <h2>Nuestra Misión</h2>
                     <p>Es una empresa que se dedica al mejoramiento y embellecimiento de espacios, vivienda, oficinas, iglesias, jardines y como complemento darle una emoción nueva a cada persona que adquiera una experiencia con la pieza...</p>
@@ -57,7 +53,25 @@ require_once __DIR__ . '/../controllers/config.php';
                     </ul>
                     
                     <h2>Políticas</h2>
-                    <p>Nos basamos en mantener la calidad del producto hecho a mano, promover técnicas tradicionales, fomentar la sostenibilidad...</p>
+                    <p>Nos basamos en mantener la calidad del producto hecho a mano, promover técnicas tradicionales, fomentar la sostenibilidad, ofrecer un trato personalizado a los clientes y establecer precios justos que reflejen el esfuerzo del trabajo artesanal.</p>
+                    <h2>Valores</h2>
+                    <li>Honestidad: entendemos que el trato justo y correcto hacia nuestros clientes es clave para fomentar relaciones duraderas con ellos.</li>
+                    <li>Respeto: respetamos y valoramos inmensamente la confianza de nuestros clientes, aún en las situaciones más difíciles.</li>
+                    <li>Entrega: Todos los que hacemos parte de esta empresa nos sentimos orgullosos de pertenecer a ella y desarrollamos nuestras funciones con total entrega.</li>
+<h2>Principios organizacionales</h2>
+<h3><li>	Calidad y Artesanía:  </li></h3>
+<p>Cada pieza debe reflejar la habilidad del artesano con un enfoque en la excelencia y la autenticidad, garantizando productos únicos que integren la tradición y la creatividad.</p>
+<h3><li>	Innovación y Creatividad:</li></h3> 
+<p>Adaptarse a las tendencias sin perder la esencia artesanal, explorando nuevas técnicas y fomentando la colaboración entre artesanos para crear diseños innovadores y diferenciados.</p>
+<h3><li>	Sostenibilidad y Responsabilidad Social:</li></h3> 
+<p>Utilizar materiales sostenibles y procesos amigables con el medio ambiente, asegurando también condiciones laborales justas y promoviendo el comercio justo.</p>
+<h3><li>	Cultura Organizacional Basada en Valores:</li></h3> 
+<p>Fomentar la pasión por el trabajo artesanal y el trabajo en equipo, creando un ambiente colaborativo basado en la confianza y el compromiso con la excelencia artística.</p>
+<h3><li>	Orientación al Cliente:</li> </h3>
+<p>Ofrecer atención personalizada y transparente, adaptando los productos a las necesidades del cliente y generando confianza en los procesos y materiales empleados.</p>
+<h3><li>	Sostenibilidad Económica:</li></h3> 
+<p>Diversificar los canales de venta, optimizando costos para ofrecer productos competitivos sin comprometer la calidad, asegurando el crecimiento y la sostenibilidad del negocio.</p>
+
                 </div>
             </div>
         </section>
