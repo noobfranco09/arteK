@@ -14,17 +14,22 @@ require_once '../controllers/config.php';
 </head>
 <body class="contact-page">
 <header>
-    <div class="container">
-        <img src="<?php echo htmlspecialchars($imagesUrl); ?>/logo.png" alt="<?php echo htmlspecialchars($siteName); ?>" class="logo">
-    </div>
-</header>
-<nav>
-    <ul>
-        <li><a href="/arteK/views/index.php">Inicio</a></li>
-        <li><a href="/arteK/views/contacto.php">Contacto</a></li>
-        <li><a href="/arteK/views/productos.php">Productos</a></li>
-    </ul>
-</nav>
+<header>
+        <div class="container">
+            <img src="<?php echo htmlspecialchars($imagesUrl); ?>/logoT.png" alt="<?php echo htmlspecialchars($siteName); ?>" class="logo">
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="/arteK/views/index.php">Inicio</a></li>
+                <li><a href="/arteK/views/productos.php">Productos</a></li>
+                <li><a href="/arteK/views/aboutUs.php">Nosotros</a></li>
+                <li><a href="/arteK/views/contacto.php">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
 <main class="container">
     <section id="contact">

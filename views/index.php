@@ -20,7 +20,7 @@ require_once __DIR__ . '/../productos.php'; // Incluye las variables $categories
 <body>
     <header>
         <div class="container">
-            <img src="<?php echo htmlspecialchars($imagesUrl); ?>/logo.png" alt="<?php echo htmlspecialchars($siteName); ?>" class="logo">
+            <img src="<?php echo htmlspecialchars($imagesUrl); ?>/logoT.png" alt="<?php echo htmlspecialchars($siteName); ?>" class="logo">
         </div>
     </header>
 
@@ -86,9 +86,7 @@ require_once __DIR__ . '/../productos.php'; // Incluye las variables $categories
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <?php echo date('Y'); ?> <?php echo htmlspecialchars($siteName); ?>. Todos los derechos reservados.</p>
-        </div>
+        
     </div>
 </footer>
             <div class="footer-copyright">
