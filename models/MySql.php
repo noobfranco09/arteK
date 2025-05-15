@@ -1,6 +1,6 @@
 
 <?php
-
+>>>>>>> login
     class Mysql
     {
         private $ipservidor="localhost";
@@ -47,5 +47,4 @@
         }
     }
 
->>>>>>> 284760b (se agrega la conexión a la base de datos, tener en cuenta que la deben llamar artK al importarla a mariadb)
 ?>
